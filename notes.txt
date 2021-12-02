@@ -1,0 +1,6 @@
+- install p5.js
+- create some sprite tiles in aesprite
+- create tile class
+- create grid class
+- create tile picker class
+- create brush class
