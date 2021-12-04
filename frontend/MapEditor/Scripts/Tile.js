@@ -1,7 +1,9 @@
 class Tile {
-    constructor(x, y, size) {
+    constructor(x, y, size, type) {
         this.pos = createVector(x, y);
         this.size = size;
+        this.type = type;
+        this.tileImage = null;
     }
 
     draw() {
