@@ -11,10 +11,20 @@ class Grid {
         }
     }
 
+    getTile(x, y) {
+        let row = this.tiles.filter(r => r.some(t => t.isBetweenYValue(y)))[0];
+        return row.filter(c => c.isBetweenXValue(x))[0];
+    }
+
     draw() {
+        this.iterateTiles(x => {x.draw(); });
+    }
+
+    iterateTiles(func) {
         for (var row of this.tiles) {
             for(var tile of row) {
-                tile.draw();
+                if (func(tile))
+                    return;
             }
         }
     }
